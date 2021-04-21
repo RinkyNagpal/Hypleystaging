@@ -1975,6 +1975,71 @@
             var mobile_found = 0; 
         }
     
+        if(CheckUrl(listing_description)) {
+          var url_found = 1;
+          //console.log("email found");
+        }
+        else {
+          var url_found = 0;
+        }
+    
+        if(listing_description.match(/(@[a-zA-Z0-9._-])/gi)) {
+          var ekthret_found = 1;
+          //console.log("email found");
+        }
+        else {
+          var ekthret_found = 0;
+        }
+        
+        //if(email_found == 1 || mobile_found == 1  || url_found == 1 || ekthret_found == 1) {
+      
+        if(invalid_listing_description == 1){
+          $(this).addClass("invalid_listing_description");
+          $(".emailnotic_listing_description").remove();
+          var email_mobile_notic = '<div style="margin-top: 5px;" class="emailnotic_listing_description notification error listing-manager-error"><p>Please enter minimum 35 characters for description</p></a></div>';
+          $("#wp-listing_description-editor-container").after(email_mobile_notic);
+        }
+        else if(email_found == 1 || mobile_found == 1  || url_found == 1 || ekthret_found == 1) {
+            $(this).addClass("invalid_listing_description");
+            $(".emailnotic_listing_description").remove();
+            var email_mobile_notic = '<div style="margin-top: 5px;" class="emailnotic_listing_description notification error listing-manager-error">Websites, emails and phone numbers aren’t allowed in listing descriptions. To keep Hypley users and yourself safe from phishing, scraping etc please remove to continue publishing your listing.<a class="close"></a></div>';
+            
+            $("#wp-listing_description-editor-container").after(email_mobile_notic);
+        }
+        else
+        {
+            $(this).removeClass("invalid_listing_description");
+            $(".emailnotic_listing_description").remove();
+        }
+        
+    });	
+    
+    // add listing page description field validate  
+    $("#listing_description").keyup(function(){
+      var listing_description = $(this).val();
+      //var len = $(this).val().length;
+        
+      if($(this).val().length < 35) {
+        var invalid_listing_description = 1;
+      }
+      else {
+        var invalid_listing_description = 0;
+      }
+      if(listing_description.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi)) {
+        var email_found = 1;
+        //console.log("email found");
+      }
+      else {
+        var email_found = 0;
+      }
+        
+      if(listing_description.match(/[\+]?\d{6}|\(\d{3}\)\s?-\d{6}/)) {  
+        var mobile_found = 1;
+      }
+      else {
+        var mobile_found = 0; 
+      }
+  
       if(CheckUrl(listing_description)) {
         var url_found = 1;
         //console.log("email found");
@@ -1991,8 +2056,8 @@
         var ekthret_found = 0;
       }
         
-        //if(email_found == 1 || mobile_found == 1  || url_found == 1 || ekthret_found == 1) {
-      
+      //if(email_found == 1 || mobile_found == 1  || url_found == 1 || ekthret_found == 1) {
+    
       if(invalid_listing_description == 1){
         $(this).addClass("invalid_listing_description");
         $(".emailnotic_listing_description").remove();
@@ -2000,21 +2065,19 @@
         $("#wp-listing_description-editor-container").after(email_mobile_notic);
       }
       else if(email_found == 1 || mobile_found == 1  || url_found == 1 || ekthret_found == 1) {
-            $(this).addClass("invalid_listing_description");
-            $(".emailnotic_listing_description").remove();
-            var email_mobile_notic = '<div style="margin-top: 5px;" class="emailnotic_listing_description notification error listing-manager-error">Websites, emails and phone numbers aren’t allowed in listing descriptions. To keep Hypley users and yourself safe from phishing, scraping etc please remove to continue publishing your listing.<a class="close"></a></div>';
-            
-            $("#wp-listing_description-editor-container").after(email_mobile_notic);
-        }
-        else
-        {
-            $(this).removeClass("invalid_listing_description");
-            $(".emailnotic_listing_description").remove();
-        }
+        $(this).addClass("invalid_listing_description");
+        $(".emailnotic_listing_description").remove();
+        var email_mobile_notic = '<div style="margin-top: 5px;" class="emailnotic_listing_description notification error listing-manager-error">Websites, emails and phone numbers aren’t allowed in listing descriptions. To keep Hypley users and yourself safe from phishing, scraping etc please remove to continue publishing your listing.<a class="close"></a></div>';
         
-    });	
-    
-    
+        $("#wp-listing_description-editor-container").after(email_mobile_notic);
+      }
+      else
+      {
+        $(this).removeClass("invalid_listing_description");
+        $(".emailnotic_listing_description").remove();
+      }
+        
+    }); 
         
     //Create An Offer Popup script
     //$(document).on('click','#listeo_add_offer_btn',function(){

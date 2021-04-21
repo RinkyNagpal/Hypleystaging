@@ -7742,6 +7742,10 @@ a.read-more:hover i {
   #posts-nav li.prev-post a:before {
     display: none;
   }
+
+  .listing-section p {
+    word-break: break-all;
+  }
 }
 
 blockquote {
