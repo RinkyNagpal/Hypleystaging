@@ -4,7 +4,8 @@
     
     <h2><?php esc_html_e('Vendors Are Being Listed In Your Area. Save 2 hours and get quotes from 5+ Experienced Vendors Today.','listeo_core'); ?></h2>
     
-    <a  href="/event-planner/"> <button type="button" id="get-quote-btn">Get Instant Quotes</button> </a> </p> 
+    <!-- <a  href="/event-planner/"> <button type="button" id="get-quote-btn">Get Instant Quotes</button> </a> -->
+    <a  href="#" id="getInstantQuote"> <button type="button" id="get-quote-btn">Get Instant Quotes</button> </a>
     
      <p>Not here? Tell us what we're missing.
 If the business you're looking for isn't here, add it! <a href="<?php echo site_url(); ?>/write-a-review-or-add-a-business/"> Add A Business </a> </p>
