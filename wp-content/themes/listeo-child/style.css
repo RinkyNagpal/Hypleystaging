@@ -1947,4 +1947,30 @@ button#get-quote-btn:hover {
   	padding-right: 20px;
   }
 }
-
+.ar-message-attachment a.download-image {
+    height: auto !important;
+    width: auto !important;
+    flex: none !important;
+    display: block !important;
+}
+.ar-message-attachment a.download-image img {
+    width: inherit !important;
+    height: auto !important;
+    max-height: 360px;
+}
+.ar-message-attachment .message-attachment {
+    display: block !important;
+    max-width: inherit !important;
+}
+.message-text.ar-message-attachment {
+    display: inline-block !important;
+}
+.message-bubble.me {
+    text-align: right;
+}
+.message-bubble.me p {
+    text-align: left;
+}
+.message-bubble .message-text.ar-message-attachment .view-attachment .message-attachment .image-title {
+    top: 40%;
+}

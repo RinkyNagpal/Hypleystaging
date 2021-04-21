@@ -588,12 +588,12 @@ class Listeo_Core_Messages {
                 foreach ($conversation as $key => $message) { ?>
                     <?php
 
-    					if($message->is_offer_message == 0) {
-    						?>
-    						<div class="message-bubble <?php if($user_id == $message->sender_id ) echo esc_attr('me'); ?>">
-    							<div class="message-avatar">
-    		                    	<a href="<?php echo esc_url(get_author_posts_url($message->sender_id)); ?>">
-    		                    		<?php //echo get_avatar($message->sender_id, '70') ?>
+                        if($message->is_offer_message == 0) {
+                            ?>
+                            <div class="message-bubble <?php if($user_id == $message->sender_id ) echo esc_attr('me'); ?>">
+                                <div class="message-avatar">
+                                    <a href="<?php echo esc_url(get_author_posts_url($message->sender_id)); ?>">
+                                        <?php //echo get_avatar($message->sender_id, '70') ?>
                                         <?php                                                   
                                         $custom_avatar_id   = get_the_author_meta( 'listeo_core_avatar_id', $message->sender_id ) ;
                                         $custom_avatar      = wp_get_attachment_image_src( $custom_avatar_id, 'listeo-avatar' );
@@ -604,48 +604,51 @@ class Listeo_Core_Messages {
                                             echo get_avatar( $message->sender_id, 70 );  
                                         }
                                         ?>
-    		                    	</a>
-    	                    	</div>
-    							<div class="message-text">
-    	                    	<?php echo wpautop($message->message) ?>
-    	                    	<?php 
-    		                        if($message->attachement_id){
-    		                            ?>
-    		                            <div class="view-attachment">
-    		                                <div class="btn-attachment">
-    		                                <?php echo "View Attachments"; ?>
-    		                                </div>
-    					                        <div class="message-attachment" style="display: none;">
-    					                        <?php
-    					                            $att_id = explode(',', $message->attachement_id);
-    					                            foreach ($att_id as $key => $value) {
-    					                                $url = wp_get_attachment_url($value);
-    					                                ?>
-    					                                <a class="download-image" href="<?php echo $url; ?>" title="<?php echo basename($url); ?>"  download>
-    					                                    <img src="<?php echo $url; ?>" width=50 height=50 />
-    					                                    <span class="image-title">
-    					                                        <!-- <i class="sl sl-icon-cloud-download"></i> -->
-    					                                        <i class="fa fa-download" aria-hidden="true"></i>
-    					                                    </span>
-    					                                </a>
-    					                            <?php
-    					                            }
-    					                    ?>                                  
-    					                    </div>
-    		                    		</div>
-    		                    <?php       
-    		                        }
-    		                    ?> </div>
-    		                    </div>
-    						<?php
-    					}
-    					else if($message->is_offer_message == 1) {
-    						$message_arr = explode('~@@@~',$message->message);
-    						?>
-                        	<div class="message-bubble <?php if($user_id == $message->sender_id ) echo esc_attr('me'); ?>">
-    							<div class="message-avatar">
-    								<a href="<?php echo esc_url(get_author_posts_url($message->sender_id)); ?>">
-    									<?php //echo get_avatar($message->sender_id, '70') ?>
+                                    </a>
+                                </div>
+                                <div class="message-text <?php if($message->attachement_id){ echo "ar-message-attachment"; }?>">
+                                <?php 
+                                    if($message->attachement_id){
+                                        ?>
+                                        <div class="view-attachment">
+                                            <!-- <div class="btn-attachment"> -->
+                                            <?php //echo "View Attachments"; ?>
+                                            <!-- </div> -->
+                                                <div class="message-attachment">
+                                                    <!--  style="display: none;" -->
+                                                <?php
+                                                    $att_id = explode(',', $message->attachement_id);
+                                                    foreach ($att_id as $key => $value) {
+                                                        $url = wp_get_attachment_url($value);
+                                                        ?>
+                                                        <a class="download-image" href="<?php echo $url; ?>" title="<?php echo basename($url); ?>"  download>
+                                                            <img src="<?php echo $url; ?>" />
+                                                            <!--  width=50 height=50 -->
+                                                            <span class="image-title">
+                                                                <!-- <i class="sl sl-icon-cloud-download"></i> -->
+                                                                <i class="fa fa-download" aria-hidden="true"></i>
+                                                            </span>
+                                                        </a>
+                                                    <?php
+                                                    }
+                                            ?>                                  
+                                            </div>
+                                        </div>
+                                <?php       
+                                    }
+                                ?>
+                                <?php echo wpautop($message->message) ?>
+                                </div>
+                                </div>
+                            <?php
+                        }
+                        else if($message->is_offer_message == 1) {
+                            $message_arr = explode('~@@@~',$message->message);
+                            ?>
+                            <div class="message-bubble <?php if($user_id == $message->sender_id ) echo esc_attr('me'); ?>">
+                                <div class="message-avatar">
+                                    <a href="<?php echo esc_url(get_author_posts_url($message->sender_id)); ?>">
+                                        <?php //echo get_avatar($message->sender_id, '70') ?>
                                         <?php                                                   
                                         $custom_avatar_id   = get_the_author_meta( 'listeo_core_avatar_id', $message->sender_id ) ;
                                         $custom_avatar      = wp_get_attachment_image_src( $custom_avatar_id, 'listeo-avatar' );
@@ -656,22 +659,22 @@ class Listeo_Core_Messages {
                                             echo get_avatar( $message->sender_id, 70 );  
                                         }
                                         ?>
-    								</a>
-    							</div>
-    							<div class="message-text listeo_is_offer_message_text">
-    								<div class="listeo_is_offer_price_title">	
-    									<h6><?php echo $message_arr[0]; ?></h6>
-    									<span><?php echo $message_arr[2]; ?></span>
-    								</div>
-    								<div class="listeo_is_offer_desc_dtl">
-    									<p><?php echo $message_arr[1]; ?></p>
-    								</div>
-    								<div class="listeo_offer_payment_url_btn"> 
-    									<a target="_blank" href="<?php echo $message_arr[3]; ?>">pay</a> 
-    								</div>
-    								
-    							</div>
-    						</div>
+                                    </a>
+                                </div>
+                                <div class="message-text listeo_is_offer_message_text">
+                                    <div class="listeo_is_offer_price_title">   
+                                        <h6><?php echo $message_arr[0]; ?></h6>
+                                        <span><?php echo $message_arr[2]; ?></span>
+                                    </div>
+                                    <div class="listeo_is_offer_desc_dtl">
+                                        <p><?php echo $message_arr[1]; ?></p>
+                                    </div>
+                                    <div class="listeo_offer_payment_url_btn"> 
+                                        <a target="_blank" href="<?php echo $message_arr[3]; ?>">pay</a> 
+                                    </div>
+                                    
+                                </div>
+                            </div>
                             <?php 
                         } 
                         
@@ -713,23 +716,24 @@ class Listeo_Core_Messages {
                                     <?php echo get_avatar($message->sender_id, '70') ?>
                                 </a>
                             </div>
-                            <div class="listeo_msg_text listeo_view_attach_msg">
-                                <?php echo wpautop($message->message) ?>
+                            <div class="listeo_msg_text listeo_view_attach_msg <?php if($message->attachement_id){ echo "ar-message-attachment"; }?>">
                                 <?php 
                                     if($message->attachement_id){
                                     ?>
                                     <div class="view-attachment">
-                                        <div class="btn-attachment">
-                                            <?php echo "View Attachments"; ?>
-                                        </div>
-                                        <div class="message-attachment" style="display: none;">
+                                        <!-- <div class="btn-attachment"> -->
+                                            <?php //echo "View Attachments"; ?>
+                                        <!-- </div> -->
+                                        <div class="message-attachment">
+                                            <!--  style="display: none;" -->
                                             <?php
                                                 $att_id = explode(',', $message->attachement_id);
                                                 foreach ($att_id as $key => $value) {
                                                     $url = wp_get_attachment_url($value);
                                                     ?>
                                                     <a class="download-image" href="<?php echo $url; ?>" title="<?php echo basename($url); ?>"  download>
-                                                        <img src="<?php echo $url; ?>" width=50 height=50 />
+                                                        <img src="<?php echo $url; ?>" />
+                                                        <!--  width=50 height=50 -->
                                                         <span class="image-title">
                                                             <!-- <i class="sl sl-icon-cloud-download"></i> -->
                                                             <i class="fa fa-download" aria-hidden="true"></i>
@@ -739,6 +743,7 @@ class Listeo_Core_Messages {
                                         </div>
                                     </div>
                                 <?php } ?> 
+                                <?php echo wpautop($message->message) ?>
                             </div>
                         </div>
                         <?php
