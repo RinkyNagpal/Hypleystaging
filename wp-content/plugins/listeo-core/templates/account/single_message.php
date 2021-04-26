@@ -148,7 +148,11 @@ if( isset( $_GET["action"]) && $_GET["action"] == 'view' )  {
 														esc_html_e('Custom Offer','listeo_core');
 													else
 														echo $last_msg[0]->message;
+
 												?>											 	
+
+											 	?>
+
 											</p>
 										</div>
 									</a>

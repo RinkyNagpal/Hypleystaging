@@ -152,5 +152,4 @@ Tags:  theme-options, translation-ready, two-columns
         e.preventDefault();
         jQuery(this).closest('.getQuote-box').fadeOut(700);
     });
-
 })(jQuery);

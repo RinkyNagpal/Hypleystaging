@@ -266,7 +266,9 @@ if( isset( $_GET["action"]) && $_GET["action"] == 'view' )  {
 					<img style="display: none; " src="<?php echo site_url(); ?>/wp-content/themes/listeo/images/loader.gif" alt="" class="loading">
 					<!-- Reply Area -->
 					<div class="clearfix"></div>
+
 					<div class="message-reply">					
+					<div class="message-reply">
 						<form action="" id="send-message-from-chat" enctype="multipart/form-data" >
 							<!-- enctype="multipart/form-data" -->
 							<textarea cols="40" id="contact-message" name="message" required rows="3" placeholder="<?php esc_html_e('Your Message', 'listeo_core'); ?>"></textarea>
@@ -277,7 +279,6 @@ if( isset( $_GET["action"]) && $_GET["action"] == 'view' )  {
 								<div class="choose-file">Choose files</div>
 								<span class="selected-files"></span>
 							</div>
-							
 							<input type="file" name="images[]" id="fileInput" multiple style="display: none;"> 
 
 							<button class="button listeo_send_msg_btn"><?php esc_html_e('Send Message', 'listeo_core'); ?></button>

@@ -2108,6 +2108,7 @@ span.cm-chat-icon {
 }
 
 
+
 .chat-dialog  .mfp-close::after,
 .chat-dialog  .mfp-close::before {
     top: 4px;
@@ -2132,3 +2133,81 @@ span.cm-chat-icon {
         right: 40px;
     }
 }
+
+.ar-message-attachment a.download-image {
+    height: auto !important;
+    width: auto !important;
+    flex: none !important;
+    display: block !important;
+}
+.ar-message-attachment a.download-image img {
+    width: inherit !important;
+    height: auto !important;
+    max-height: 360px;
+}
+.ar-message-attachment .message-attachment {
+    display: block !important;
+    max-width: inherit !important;
+}
+.message-text.ar-message-attachment {
+    display: inline-block !important;
+}
+.message-bubble.me {
+    text-align: right;
+}
+.message-bubble.me p {
+    text-align: left;
+}
+.message-bubble .message-text.ar-message-attachment .view-attachment .message-attachment .image-title {
+    top: 40%;
+}
+.getQuote-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 99999;
+    display: none;
+}
+.getQuote-box-inner {
+    width: 100%;
+    padding: 120px 40px;
+    max-height: 100vh;
+    overflow-x: hidden;
+    margin-right: -40px;
+    overflow-y: scroll;
+}
+.instantBox-form {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.instantBox-form .ur-frontend-form {
+    background: #ffffff;
+}
+.getQuote-box-close {
+    position: relative;
+}
+.getQuote-box-close a {
+    position: absolute;
+    font-size: 36px !important;
+    right: 15px;
+    top: 5px;
+}
+.getQuote-box-overlay {
+    position: fixed;
+    background: rgb(0 0 0 / 60%);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.instantBox-form {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 99;
+}
+
