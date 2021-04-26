@@ -20,8 +20,6 @@ input, input[type=text], input[type=password], input[type=email], input[type=num
 }
 
 
-
-
 .vc_row-fluid .listing-item-container,
 section.fullwidth .listing-item-container,
 .fs-content .listing-item-container {
@@ -1894,62 +1892,137 @@ button#get-quote-btn:hover {
         display: block !important;
         flex-wrap: wrap !important;
     }
-  /*add-listing*/
-  .add-listing-headline{padding: 10px;margin: 0 0 20px 0;}
-  .add-listing-headline h3{font-size: 18px;line-height: 24px;}
-  .add-listing-section{padding: 0 10px 15px 10px;}
-  .add-listing-headline{width: 100%;left: 0;}
-  .dashboard-content{width: 100%;padding: 30px 15px !important;}
-  .add-listing-section{width: 100%;padding:0 0px 15px 0px;box-sizing: border-box;}
-  #_price_min{width: 100%;}
-  .add-listing-section{margin:0px;margin-bottom:30px;}
-  .add-listing-section i.tip{width: 18px;}
-  .add-listing-section .select-input.disabled-first-option{width: 100%;}
-  .add-listing-section .add-pricing-submenu.button, .add-listing-section .add-pricing-list-item.button{margin-top: 10px;padding: 5px 15px;}
-  .add-listing-section .cd-switch label{padding: 5px 0;}
-  .add-listing-section .listeo_core-term-checklist-listing_feature{margin-bottom: 10px;}
-  body #submit_map{margin-bottom: 20px;}
-  .add-listing-section textarea{min-height: 150px;}
-  table#listeo-calendar-outer .week-day-cell td{padding: 10px;}
-  table#listeo-calendar-outer .week-day-cell td .calendar-day-date{padding: 5px;font-size: 18px;margin: 0 0 5px 0;}
-  .add-listing-section .submit-page button[name="submit_listing"]{padding: 5px 14px;font-size: 16px;}
-  .add-listing-section .dropzone{padding: 10px;min-height: 100px;}
-  .add-listing-section .dropzone .dz-message{margin: 20px 0;}
+    /*add-listing*/
+    .add-listing-headline{padding: 10px;margin: 0 0 20px 0;}
+    .add-listing-headline h3{font-size: 18px;line-height: 24px;}
+    .add-listing-section{padding: 0 10px 15px 10px;}
+    .add-listing-headline{width: 100%;left: 0;}
+    .dashboard-content{width: 100%;padding: 30px 15px !important;}
+    .add-listing-section{width: 100%;padding:0 0px 15px 0px;box-sizing: border-box;}
+    #_price_min{width: 100%;}
+    .add-listing-section{margin:0px;margin-bottom:30px;}
+    .add-listing-section i.tip{width: 18px;}
+    .add-listing-section .select-input.disabled-first-option{width: 100%;}
+    .add-listing-section .add-pricing-submenu.button, .add-listing-section .add-pricing-list-item.button{margin-top: 10px;padding: 5px 15px;}
+    .add-listing-section .cd-switch label{padding: 5px 0;}
+    .add-listing-section .listeo_core-term-checklist-listing_feature{margin-bottom: 10px;}
+    body #submit_map{margin-bottom: 20px;}
+    .add-listing-section textarea{min-height: 150px;}
+    table#listeo-calendar-outer .week-day-cell td{padding: 10px;}
+    table#listeo-calendar-outer .week-day-cell td .calendar-day-date{padding: 5px;font-size: 18px;margin: 0 0 5px 0;}
+    .add-listing-section .submit-page button[name="submit_listing"]{padding: 5px 14px;font-size: 16px;}
+    .add-listing-section .dropzone{padding: 10px;min-height: 100px;}
+    .add-listing-section .dropzone .dz-message{margin: 20px 0;}
 
-  /* feature listing */
-  .listeo-featured-listing-box{
+    /* feature listing */
+    .listeo-featured-listing-box{
         padding: 0px 5px 0px 5px !important;
         top: 5px;
         left: 5px;
         font-size: 12px !important;
-  }
-  .listeo-featured-listing-box-listview{
-    padding: 0px 5px 0px 5px !important;
-    top: -5px;
-    left: -5px;
-    font-size: 12px !important;
-  }
- .get-quote-btn{
+    }
+    .listeo-featured-listing-box-listview{
+        padding: 0px 5px 0px 5px !important;
+        top: -5px;
+        left: -5px;
+        font-size: 12px !important;
+    }
+    .get-quote-btn{
         background-color: #f65a5f !important;
-    color: #FFE !important;
-    font-size: 26px !important;
-    font-weight: 600 !important;
-    cursor: pointer;
-    border-radius: 12px !important;
-    border-color: white !important;
-    padding: 20px !important;
-      text-align: centre;
-  }
-  button#get-quote-btn {
-  	font-size: 20px;
-  	padding: 15px;
-  }
-  #listings-not-found {
-  	padding-left: 20px;
-  	padding-right: 20px;
-  }
+        color: #FFE !important;
+        font-size: 26px !important;
+        font-weight: 600 !important;
+        cursor: pointer;
+        border-radius: 12px !important;
+        border-color: white !important;
+        padding: 20px !important;
+        text-align: centre;
+    }
+    button#get-quote-btn {
+        font-size: 20px;
+        padding: 15px;
+    }
+    #listings-not-found {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
-
+.ar-message-attachment a.download-image {
+    height: auto !important;
+    width: auto !important;
+    flex: none !important;
+    display: block !important;
+}
+.ar-message-attachment a.download-image img {
+    width: inherit !important;
+    height: auto !important;
+    max-height: 360px;
+}
+.ar-message-attachment .message-attachment {
+    display: block !important;
+    max-width: inherit !important;
+}
+.message-text.ar-message-attachment {
+    display: inline-block !important;
+}
+.message-bubble.me {
+    text-align: right;
+}
+.message-bubble.me p {
+    text-align: left;
+}
+.message-bubble .message-text.ar-message-attachment .view-attachment .message-attachment .image-title {
+    top: 40%;
+}
+.getQuote-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 99999;
+    display: none;
+}
+.getQuote-box-inner {
+    width: 100%;
+    padding: 120px 40px;
+    max-height: 100vh;
+    overflow-x: hidden;
+    margin-right: -40px;
+    overflow-y: scroll;
+}
+.instantBox-form {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.instantBox-form .ur-frontend-form {
+    background: #ffffff;
+}
+.getQuote-box-close {
+    position: relative;
+}
+.getQuote-box-close a {
+    position: absolute;
+    font-size: 36px !important;
+    right: 15px;
+    top: 5px;
+}
+.getQuote-box-overlay {
+    position: fixed;
+    background: rgb(0 0 0 / 60%);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.instantBox-form {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 99;
+}
 
 
 

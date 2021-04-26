@@ -144,4 +144,13 @@ Tags:  theme-options, translation-ready, two-columns
         $('#listeo_core-search-form').appendTo('section.search .row .col-md-12');
     }
 
+    jQuery('body').on('click', '#getInstantQuote #get-quote-btn', function(e){
+        e.preventDefault();
+        jQuery('.getQuote-box').css('display', 'flex').hide().fadeIn(700);
+    });
+    jQuery('body').on('click', '.getQuote-box-overlay, #getQuote-box-close', function(e){
+        e.preventDefault();
+        jQuery(this).closest('.getQuote-box').fadeOut(700);
+    });
+
 })(jQuery);

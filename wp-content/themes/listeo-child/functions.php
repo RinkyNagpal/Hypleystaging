@@ -22,7 +22,7 @@ function listeo_cristian_behind_scripts() {
     // wp_register_script( 'daterangerpicker', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', array( 'jquery','moment' ) );
 	// wp_enqueue_script('daterangerpicker');
 
-	wp_register_script( 'cristian_script', get_stylesheet_directory_uri() . '/js/cristian_script.js', array( 'jquery' ));
+	wp_register_script( 'cristian_script', get_stylesheet_directory_uri() . '/js/cristian_script.js?'.time(), array( 'jquery' ));
 	//wp_register_script( 'counterup', get_stylesheet_directory_uri() . '/js/counterup.js', array( 'jquery' ));
 	wp_register_script( 'cm_scripts', get_stylesheet_directory_uri() . '/js/cm_scripts.js', array( 'jquery' ), time());
 

@@ -10,6 +10,17 @@
  * @package Listeo
  */
 get_header('split');?>
+<div class="getQuote-box">
+	<div class="getQuote-box-inner">
+		<div class="getQuote-box-overlay"></div>
+		<div class="instantBox-form">
+			<div class="getQuote-box-close">
+				<a href="#" id="getQuote-box-close">&times;</a>
+			</div>
+			<?php echo do_shortcode('[user_registration_form id="9743"]') ?>
+		</div>
+	</div>
+</div>
 <div class="fs-container">
 
 	<div class="fs-inner-container content">

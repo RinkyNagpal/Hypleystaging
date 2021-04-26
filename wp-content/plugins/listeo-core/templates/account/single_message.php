@@ -148,7 +148,8 @@ if( isset( $_GET["action"]) && $_GET["action"] == 'view' )  {
 														esc_html_e('Custom Offer','listeo_core');
 													else
 														echo $last_msg[0]->message;
-											 ?></p>
+												?>											 	
+											</p>
 										</div>
 									</a>
 								</li>
@@ -194,24 +195,25 @@ if( isset( $_GET["action"]) && $_GET["action"] == 'view' )  {
 												?>
 											</a>
 										</div>
-										<div class="message-text">
-											<?php echo wpautop($message->message) ?>
+										<div class="message-text <?php if($message->attachement_id){ echo "ar-message-attachment"; }?>">
 											<?php //echo $message->message; ?>
 		                					<?php 
 		                                   		if($message->attachement_id){
 		                                       	?>
 		                                    	<div class="view-attachment">
-		                                        	<div class="btn-attachment">
-		                                            	<?php echo "View Attachments"; ?>
-		                                        	</div>
-		                                			<div class="message-attachment" style="display: none;">
+		                                        	<!-- <div class="btn-attachment"> -->
+		                                            	<?php //echo "View Attachments"; ?>
+		                                        	<!-- </div> -->
+		                                			<div class="message-attachment" >
+		                                				<!-- style="display: none;" -->
 				                                        <?php
 				                                            $att_id = explode(',', $message->attachement_id);
 				                                            foreach ($att_id as $key => $value) {
 				                                                $url = wp_get_attachment_url($value);
 				                                                ?>
 				                                                <a class="download-image" href="<?php echo $url; ?>" title="<?php echo basename($url); ?>"  download>
-				                                                    <img src="<?php echo $url; ?>" width=50 height=50 />
+				                                                    <img src="<?php echo $url; ?>"  />
+				                                                    <!-- width=50 height=50 -->
 				                                                    <span class="image-title">
 				                                                        <!-- <i class="sl sl-icon-cloud-download"></i> -->
 				                                                        <i class="fa fa-download" aria-hidden="true"></i>
@@ -220,7 +222,8 @@ if( isset( $_GET["action"]) && $_GET["action"] == 'view' )  {
 				                                         <?php } ?>                                  
 		                            				</div>
 		                            			</div>
-		                                <?php } ?> 
+		                                	<?php } ?> 
+		                                	<?php echo wpautop($message->message) ?>
 		                                </div>
 		                               </div>
 									<?php
